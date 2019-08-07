@@ -13,12 +13,7 @@ class Productos extends Component {
                         busqueda={this.props.busquedaProducto}
                     />
                     <ul className="lista-productos">
-                         {Object.keys(this.props.productos).map(producto => (
-                              <Producto
-                                   informacion={this.props.productos[producto]}
-                                   key={producto}
-                              />
-                         )) }
+                   
                     </ul>
                </div>
            )
@@ -26,3 +21,12 @@ class Productos extends Component {
 }
  
 export default Productos;
+
+/*
+      {Object.keys(this.props.productos).map(producto => (
+                              <Producto
+                                   informacion={this.props.productos[producto]}
+                                   key={producto}
+                              />
+                         )) }
+                          */

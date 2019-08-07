@@ -34,7 +34,7 @@ export const makeMainRoutes = () => {
                     render={props => (
                         <Productos
                             //productos={resultado}
-                            busquedaProducto={this.busquedaProducto}
+                            // busquedaProducto={this.busquedaProducto}
                             auth={auth}
                             {...props}
                         />
@@ -49,7 +49,7 @@ export const makeMainRoutes = () => {
                     render={props => (
                         <Productos
                             //productos={resultado}
-                            busquedaProducto={this.busquedaProducto}
+                            // busquedaProducto={this.busquedaProducto}
                             auth={auth}
                             {...props}
                         />

@@ -11,8 +11,9 @@ export default class Auth {
     domain: AUTH_CONFIG.domain,
     clientID: AUTH_CONFIG.clientID,
     redirectUri: AUTH_CONFIG.callbackUrl,
+    audience: AUTH_CONFIG.apiURL,
     responseType: 'token id_token',
-    scope: 'openid'
+    scope: 'read:productos'
   });
 
   constructor() {
@@ -23,7 +24,6 @@ export default class Auth {
     this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
-    this.getAccessToken = this.getAccessToken.bind(this);
   }
 
   login() {
@@ -48,10 +48,6 @@ export default class Auth {
         alert(`Error: ${err.error}. Check the console for further details.`);
       }
     });
-  }
-
-  getAccessToken() {
-    return this.accessToken;
   }
 
   getIdToken() {
