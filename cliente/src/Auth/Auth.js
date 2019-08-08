@@ -21,9 +21,9 @@ export default class Auth {
     this.logout = this.logout.bind(this);
     this.handleAuthentication = this.handleAuthentication.bind(this);
     this.isAuthenticated = this.isAuthenticated.bind(this);
-    this.getAccessToken = this.getAccessToken.bind(this);
     this.getIdToken = this.getIdToken.bind(this);
     this.renewSession = this.renewSession.bind(this);
+    this.getAccessToken = this.getAccessToken.bind(this);
   }
 
   login() {
@@ -31,7 +31,7 @@ export default class Auth {
   }
 
   getAccessToken(){
-    const accessToken = localStorage.getItem('access_toke');
+    const accessToken = localStorage.getItem('access_token');
     if(!accessToken)
       return new Error('Hubo un error al generar el token');
 
@@ -63,6 +63,11 @@ export default class Auth {
     this.accessToken = authResult.accessToken;
     this.idToken = authResult.idToken;
     this.expiresAt = expiresAt;
+
+    localStorage.setItem('access_token', authResult.accessToken);
+    localStorage.setItem('id_token', authResult.idToken);
+    localStorage.setItem('expires_at', expiresAt);
+
 
     // navigate to the home route
     history.replace('/productos');
